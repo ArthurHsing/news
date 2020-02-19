@@ -25,6 +25,13 @@ var listSchema = new mongoose.Schema({
 var listModel = mongoose.model('list', listSchema, 'list');
 /* GET home page. */
 
+router.get('/list.html', function(req, res){
+  // 通过listModel获取所有的数据
+  listModel.find().exec(function(err, data){
+    res.render('newslist.ejs', {list:data});
+  });
+});
+
 // 挂载一个保存新增数据的路由save_add.html
 router.post('/save_add.html', function(req, res){
   // 接收客户端传过来的POST方式的数据
