@@ -57,8 +57,8 @@
             <td class="tdcenter"><%=list[i].author%></td>
             <td class="tdcenter"><%=list[i].time%></td>
             <td>
-                <a href="#">修改</a>
-                <a href="#">删除</a>
+                <a href="/edit.html?id=<%=list[i]._id%>">修改</a>
+                <a href="/del.html?id=<%=list[i]._id%>">删除</a>
             </td>
         </tr>
         <%}%>

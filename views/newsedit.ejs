@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newsedit</title>
+    <style type="text/css">
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        table td{
+            border: solid 1px #eee;
+            padding-right: 5px;
+            height: 30px;
+            font-family: "微软雅黑";
+        }
+
+        table td.leftlable{
+            width: 100px;
+            text-align: right;
+        }
+
+        table td input{
+            width: 200px;
+            border: solid 1px #eee;
+            margin-left: 5px;
+            height: 20px;
+        }
+
+        table td textarea{
+            width: 500px;
+            height: 200px;
+            border: solid 1px #eee;
+            margin: 5px;
+        }
+
+        #btnsave{
+            width: 80px;
+            background-color: darkorange;
+            color: white;
+            border: solid 1px #FF8C00;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/save_edit.html" method="post">
+        <input type="hidden" name="id" value="<%=news._id%>">
+        <table cellpadding="0" cellspacing="0">
+            <tr><td class="leftlable">标题</td><td><input type="text" name="title" value="<%=news.title%>"></td></tr>
+            <tr><td class="leftlable">作者</td><td><input type="text" name="author" value="<%=news.author%>"></td></tr>
+            <tr><td class="leftlable">来源</td><td><input type="text" name="from" value="<%=news.from%>"></td></tr>
+            <tr><td class="leftlable">内容</td><td><textarea name="content" rows="5" cols="20"><%=news.content%></textarea></td></tr>
+            <tr><td class="leftlable">操作</td><td><input type="submit" id="btnsave" value="立即修改"></td></tr>
+        </table>
+    </form>
+</body>
+</html>
